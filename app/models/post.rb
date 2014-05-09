@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  include Bootsy::Container
 
   validates :title, presence: true
   validates :body, presence: true

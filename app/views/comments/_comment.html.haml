@@ -1,0 +1,9 @@
+%h2 Comments
+- @post.comments.each do |comment|
+
+  %strong= comment.user.name
+  %br/
+  %em="Commented at #{comment.created_at.strftime("%m/%d/%Y, %l:%M %P")}"
+  %br/
+  = comment.comment
+  %hr
