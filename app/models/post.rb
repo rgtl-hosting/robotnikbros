@@ -4,5 +4,5 @@ class Post < ActiveRecord::Base
   validates :body, presence: true
   belongs_to :user
 
-  scope :ordered, order('created_at DESC')
+  scope :ordered, order('created_at ASC')
 end

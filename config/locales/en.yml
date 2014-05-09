@@ -25,3 +25,9 @@ en:
   sessions:
     new:
       title: 'Sign in to RobotnikBros.com'
+  posts:
+    index:
+      title: 'RobotnikBros.com'
+      post_title: 'Post Title'
+      author: 'Author'
+      recent_posts: 'Recent Posts'
