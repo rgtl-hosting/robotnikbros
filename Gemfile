@@ -7,6 +7,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'haml', '4.0.5'
 gem 'bootsy'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

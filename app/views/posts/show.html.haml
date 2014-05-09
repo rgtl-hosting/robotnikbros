@@ -1,12 +1,18 @@
-%h1= @post.title
+%h3= @post.title
+%em
+  ="Posted by #{@post.user.name} on #{@post.created_at.strftime("%m/%d/%Y")}"
+  -if current_user == @post.user
+    |
+    = link_to 'Edit', edit_post_path(@post)
+    |
 %p#notice= notice
-%p
-  %strong Body:
-  = @post.body
-%p
-  %strong User:
-  = @post.user.name
+= simple_format(@post.body)
+%hr
+%h4= pluralize(@post.comments.count, 'comment')
 = render 'comments/comment'
-= render 'comments/form'
-= link_to 'Edit', edit_post_path(@post)
-= link_to 'Back', posts_path
+- if signed_in?
+  = render 'comments/form'
+- else
+  %em You need to be logged in to post a comment.
+  = link_to 'Sign in', signin_path
+-# = link_to 'Edit', edit_post_path(@post)
