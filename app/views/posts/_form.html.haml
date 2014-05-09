@@ -10,12 +10,11 @@
             %li= msg
     .form-group
       = f.label :title
-      %br/
-      = f.text_field :title
+      = f.text_field :title, :default => :title
     .form-group
-      = f.label :body
-      %br/
       = f.bootsy_area :body, :size => "30x20"
       = f.hidden_field :user_id, value: current_user.id
     .actions
       = f.submit nil, :class => 'btn btn-primary warning'
+      or
+      = link_to t('.cancel'), posts_path

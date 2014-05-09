@@ -21,6 +21,14 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    home: 'Home'
+    help: 'Help'
+    profile: 'Profile'
+    settings: 'Settings'
+    sign_in: 'Sign In'
+    sign_out: 'Sign Out'
+    new_post: 'New Post'
 
   sessions:
     new:
@@ -31,3 +39,9 @@ en:
       post_title: 'Post Title'
       author: 'Author'
       recent_posts: 'Recent Posts'
+      cancel: 'Cancel'
+    new:
+      new_post: 'New Post'
+  static_pages:
+    home:
+      sign_in_up: 'Sign in/Sign Up'

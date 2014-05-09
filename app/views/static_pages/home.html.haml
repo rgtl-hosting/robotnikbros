@@ -1,6 +1,7 @@
 .center.hero-unit
   = image_tag("rblogo.png", alt:"RobotnikBros")
   %h2
-  = link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary"
+  - if !signed_in?
+    = link_to (t'.sign_in_up'), signup_path, class: "btn btn-large btn-primary"
 
 = render 'posts/recent_posts'

@@ -1,0 +1,17 @@
+%h3= "#{@user.name}'s Posts"
+%table.table.bordered
+  %thead
+    %tr
+      %th=(t'.post_title')
+  %tbody
+    - current_user_posts.each do |post|
+      %tr
+        %td= link_to post.title, post
+        %td
+          - if current_user == post.user
+            = link_to 'Edit', edit_post_path(post)
+        %td
+          - if current_user == post.user
+            = link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Post', new_post_path
