@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :posts
 
-  ROLES = %w[author admin]
+  ROLES = %w[author admin commenter]
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
