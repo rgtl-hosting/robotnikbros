@@ -9,4 +9,8 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def copyright
+    "&copy; #{Time.zone.now.strftime("%Y")}".html_safe
+  end
 end
