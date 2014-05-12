@@ -34,11 +34,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-  if @post.update(safe_params)
-    redirect_to @post
-  else
-    render 'edit'
-  end
+    if @post.update(safe_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
   end
 
   private
