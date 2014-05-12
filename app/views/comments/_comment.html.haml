@@ -2,7 +2,7 @@
 
   %strong= comment.user.name
   %br/
-  %em="Commented at #{comment.created_at.strftime("%m/%d/%Y, %l:%M %P")}"
+  %em="Commented #{time_ago_in_words(comment.created_at)} ago"
   %br/
   = comment.comment
   %hr
