@@ -22,13 +22,19 @@
 en:
   hello: "Hello world"
   layouts:
-    home: 'Home'
-    help: 'Help'
-    profile: 'Profile'
-    settings: 'Settings'
-    sign_in: 'Sign In'
-    sign_out: 'Sign Out'
-    new_post: 'New Post'
+    header:
+      home: 'Home'
+      help: 'Help'
+      profile: 'Profile'
+      settings: 'Settings'
+      sign_in: 'Sign In'
+      sign_out: 'Sign Out'
+      new_post: 'New Post'
+    footer:
+      home: 'Home'
+      about: 'About us'
+      contact: 'Contact Us'
+      sitename: 'Robotnik Bros'
 
   sessions:
     new:
@@ -42,6 +48,10 @@ en:
       cancel: 'Cancel'
     new:
       new_post: 'New Post'
+    form:
+      cancel: 'Cancel'
+    edit:
+      title: 'Editing Post:'
   static_pages:
     home:
       sign_in_up: 'Sign in/Sign Up'

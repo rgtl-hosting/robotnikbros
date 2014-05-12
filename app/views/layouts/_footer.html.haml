@@ -1,7 +1,10 @@
 %footer.footer
   %small
-    = link_to "RobotnikBros", root_path
-  %nav
+    = link_to t('.home'), root_path
+  %center
+    = copyright
+    = t('.sitename')
+  .pull_right
     %ul
-      %li= link_to "About",   about_path
-      %li= link_to "Contact", contact_path
+      %li= link_to t('.about'),   about_path, :class => 'loud'
+      %li= link_to t('.contact'), contact_path

@@ -1,4 +1,6 @@
-%h3="Editing #{@post.title}"
+%h3
+  = t('.title')
+  = @post.title
 = render 'form'
 = link_to 'Show', @post
 |
