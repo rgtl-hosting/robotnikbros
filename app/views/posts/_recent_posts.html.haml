@@ -1,11 +1,14 @@
 %h3=(t'.recent_posts')
-%table.table.bordered
-  %thead
-    %tr
-      %th=(t'.post_title')
-      %th=(t'.author')
-  %tbody
-    - recent_posts.each do |post|
-      %tr
-        %td= link_to post.title, post
-        %td= link_to post.user.name, post.user
+- recent_posts.each do |post|
+  %h4
+    = link_to post.title, post
+  %br
+  %em
+    by
+    = link_to post.user.name, post.user
+  %br
+  = truncate(post.body.html_safe, length: 480)
+  %br
+  %em
+    = link_to 'read more', post
+  %hr
