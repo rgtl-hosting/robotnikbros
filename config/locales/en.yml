@@ -52,6 +52,15 @@ en:
       cancel: 'Cancel'
     edit:
       title: 'Editing Post:'
+    show:
+      sign_in: 'Sign In'
   static_pages:
     home:
       sign_in_up: 'Sign in/Sign Up'
+  users:
+    users_posts:
+      edit: 'Edit'
+      delete: 'Delete Post'
+    edit:
+      update: 'Update your Profile'
+      change_gravatar: 'Change gravatar'

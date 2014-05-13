@@ -7,12 +7,12 @@
     |
 %p#notice= notice
 = simple_format(@post.body)
-%hr
+
 %h4= pluralize(@post.comments.count, 'comment')
 = render 'comments/comment'
 - if signed_in?
   = render 'comments/form'
 - else
-  %em You need to be logged in to post a comment.
-  = link_to 'Sign in', signin_path
+  %em You need to be signed in to post a comment.
+  = link_to t('.sign_in'), signin_path
 -# = link_to 'Edit', edit_post_path(@post)

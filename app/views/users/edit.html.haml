@@ -1,5 +1,5 @@
 - provide(:title, "Edit user")
-%h1 Update your profile
+%h1= t('.update')
 .row
   .span6.offset3
     = form_for(@user) do |f|
@@ -14,4 +14,5 @@
       = f.password_field :password_confirmation
       = f.submit "Save changes", class: "btn btn-large btn-primary"
     = gravatar_for @user
-    %a{:href => "http://gravatar.com/emails"} change
+    %a{ href: "http://gravatar.com/emails" }
+      = t('.change_gravatar') 
