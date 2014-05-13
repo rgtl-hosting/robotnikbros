@@ -5,11 +5,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = current_post
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = current_post
     @post.destroy
 
     respond_to do |format|
@@ -33,11 +33,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = current_post
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = current_post
 
     if @post.update(safe_params)
       redirect_to @post
@@ -50,6 +50,10 @@ class PostsController < ApplicationController
 
   def safe_params
     params.require(:post).permit(:title, :body, :user_id, :bootsy_image_gallery_id)
+  end
+
+  def current_post
+    Post.find(params[:id])
   end
 
 end
