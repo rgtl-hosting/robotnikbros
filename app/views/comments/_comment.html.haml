@@ -1,8 +1,11 @@
 - @post.comments.each do |comment|
 
-  %strong= comment.user.name
-  %br/
-  %em="Commented #{time_ago_in_words(comment.created_at)} ago"
-  %br/
-  = comment.comment
+  .blockquote{ style: 'min-height: 70px;' }
+    %aside
+      = gravatar_for comment.user
+    %strong= comment.user.name
+    %br/
+    %em="Commented #{time_ago_in_words(comment.created_at)} ago"
+    %br/
+    = comment.comment
   %hr
