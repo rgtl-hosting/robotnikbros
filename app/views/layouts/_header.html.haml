@@ -7,6 +7,7 @@
           %li= link_to (t'.home'), root_path
           %li= link_to (t'.help'), help_path
           - if signed_in?
+            %li= link_to (t'.new_post'), new_post_path
             %li#fat-menu.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
                 Account
@@ -17,6 +18,5 @@
                 %li.divider
                 %li
                   = link_to (t'.sign_out'), signout_path, method: "delete"
-            %li= link_to (t'.new_post'), new_post_path
           -else
             %li= link_to (t'.sign_in'), signin_path
