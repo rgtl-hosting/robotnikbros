@@ -10,7 +10,12 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    redirect_to posts_path
+    @post.destroy
+
+    respond_to do |format|
+      format.html { redirect_to post_comments_path(@post) }
+      format.xml  { head :ok }
+    end
   end
 
   def new
