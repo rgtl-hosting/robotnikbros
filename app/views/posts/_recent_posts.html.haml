@@ -2,7 +2,6 @@
 - recent_posts.each do |post|
   %h4
     = link_to post.title, post
-  %br
   %em
     by
     = link_to post.user.name, post.user
@@ -11,4 +10,6 @@
   %br
   %em
     = link_to 'read more', post
+    |
+    = pluralize(post.comments.count, 'comment')
   %hr
