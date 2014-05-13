@@ -2,6 +2,6 @@
   = image_tag("rblogo.png", alt:"RobotnikBros")
   %h2
   - if !signed_in?
-    = link_to (t'.sign_in_up'), signup_path, class: "btn btn-large btn-primary"
+    = link_to (t'.sign_in_up'), signin_path, class: "btn btn-large btn-primary"
 
 = render 'posts/recent_posts'
