@@ -30,6 +30,7 @@ en:
       sign_in: 'Sign In'
       sign_out: 'Sign Out'
       new_post: 'New Post'
+      account: 'Account'
     footer:
       home: 'Home'
       about: 'About us'
