@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MicropostsControllerTest < ActionController::TestCase
+class PostsControllerTest < ActionController::TestCase
   setup do
     @post = posts(:one)
   end
@@ -17,7 +17,7 @@ class MicropostsControllerTest < ActionController::TestCase
   end
 
   test "should create post" do
-    assert_difference('Micropost.count') do
+    assert_difference('Post.count') do
       post :create, post: { content: @post.content, user_id: @post.user_id }
     end
 
@@ -40,7 +40,7 @@ class MicropostsControllerTest < ActionController::TestCase
   end
 
   test "should destroy post" do
-    assert_difference('Micropost.count', -1) do
+    assert_difference('Post.count', -1) do
       delete :destroy, id: @post
     end
 

@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class MicropostsHelperTest < ActionView::TestCase
+class PostsHelperTest < ActionView::TestCase
 end
