@@ -9,13 +9,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = current_post
     @post.destroy
-
-    respond_to do |format|
-      format.html { redirect_to post_comments_path(@post) }
-      format.xml  { head :ok }
-    end
+    redirect_to posts_path(@post)
   end
 
   def new
