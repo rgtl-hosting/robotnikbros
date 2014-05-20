@@ -9,8 +9,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = current_post
     @post.destroy
-    redirect_to posts_path(@post)
+    redirect_to root_url
+    flash[:success] = "Successfully Deleted Post: #{@post.title}."
   end
 
   def new
