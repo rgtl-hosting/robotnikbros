@@ -21,5 +21,6 @@
                 %li.divider
                 %li
                   = link_to (t'.sign_out'), signout_path, method: "delete"
+            %li= link_to "Hello, #{current_user.name}", '#'
           -else
             %li= link_to (t'.sign_in'), signin_path
