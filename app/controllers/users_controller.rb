@@ -74,7 +74,7 @@ class UsersController < ApplicationController
     # Never trust parameters from the internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :birth_date, :show_age)
     end
     def signed_in_user
       redirect_to signin_url, notice: "Please sign in." unless signed_in?

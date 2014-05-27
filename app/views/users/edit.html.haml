@@ -12,7 +12,13 @@
       = f.password_field :password
       = f.label :password_confirmation, "Confirm Password"
       = f.password_field :password_confirmation
+      = f.label :birth_date
+      = f.date_field :birth_date
+      .checkbox
+        = f.label :show_age do
+          = f.check_box :show_age
+          %span Show Age on Profile
       = f.submit "Save changes", class: "btn btn-large btn-primary"
     = gravatar_for @user
     %a{ href: "http://gravatar.com/emails" }
-      = t('.change_gravatar') 
+      = t('.change_gravatar')

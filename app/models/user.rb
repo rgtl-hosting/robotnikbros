@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
     ROLES.index(base_role.to_s) <= ROLES.index(role)
   end
 
+  def age
+    (Time.zone.now.to_date - birth_date.to_date).to_i / 365
+  end
+
   private
 
     def create_remember_token
