@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  ROLES = [
+    ADMIN_ROLE = 'admin',
+    AUTHOR_ROLE = 'author',
+    COMMENTER_ROLE = 'commenter',
+  ]
+
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   validates :name,  presence: true, length: { maximum: 50 }
@@ -11,8 +17,6 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :posts
 
-  ROLES = %w[author admin commenter]
-
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
@@ -21,8 +25,15 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
-  def role?(base_role)
-    ROLES.index(base_role.to_s) <= ROLES.index(role)
+  ROLES.each do |role_name|
+    define_method "#{role_name}?" do
+      role == role_name
+    end
+  end
+
+  def has_role?(*roles)
+    return false if roles.blank?
+    roles.include?(role.to_sym)
   end
 
   def age

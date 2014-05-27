@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
 
   def create
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.create(safe_params)
     redirect_to post_path(@post)
   end
