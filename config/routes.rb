@@ -2,10 +2,10 @@ TestApp::Application.routes.draw do
 
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   root 'static_pages#home'
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
-  match '/contact', to: 'static_pages#contact', via: 'get'
+  match 'signup',  to: 'users#new',            via: 'get'
+  match 'signin',  to: 'sessions#new',         via: 'get'
+  match 'signout', to: 'sessions#destroy',     via: 'delete'
+  match 'contact', to: 'static_pages#contact', via: 'get'
   resources :posts do
     resources :comments
   end
