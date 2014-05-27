@@ -10,7 +10,7 @@
     = render 'layouts/header'
     .container.panel
       - flash.each do |key, value|
-        %div{class: ".alert.alert-#{key}"}
+        %div{class: "alert alert-#{key}"}
           = value
       = yield
       = render 'layouts/footer'
