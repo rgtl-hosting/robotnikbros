@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource skip_load_resource only: [:create]
 
   def index
     @posts = Post.ordered
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def destroy
@@ -15,10 +16,11 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def create
-
+    @post = Post.new(safe_params)
     if @post.save
       redirect_to @post
     else
