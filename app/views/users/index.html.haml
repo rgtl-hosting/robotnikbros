@@ -1,6 +1,12 @@
 .panel.panel-default
   .panel-heading
     %strong Manage users
+    .pull-right
+      = link_to new_user_path, class: 'btn btn-primary btn-small' do
+        %span
+          %i.glyphicon.glyphicon-plus
+          Add New User
+
   %table.table
     %thead
       %tr
