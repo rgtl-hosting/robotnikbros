@@ -8,9 +8,10 @@
     = render 'layouts/shim'
   %body
     = render 'layouts/header'
-    .container.panel
+    .container.panel.default-panel
       - flash.each do |key, value|
         %div{class: "alert alert-#{key}"}
           = value
-      = yield
+      .panel-body
+        = yield
       = render 'layouts/footer'

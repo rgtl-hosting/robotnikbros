@@ -1,3 +1,6 @@
-%h1=(t'.title')
+- if current_user.admin?
+  = render 'posts/manage_posts'
+- else
+  %h1=(t'.title')
 
-= render 'posts/recent_posts'
+  = render 'posts/recent_posts'

@@ -8,14 +8,22 @@
             = link_to root_path, title: t('.home') do
               %i.glyphicon.glyphicon-home
           - if signed_in?
-            %li
-              = link_to new_post_path, title: t('.new_post') do
-                %i.glyphicon.glyphicon-plus
+            - if !current_user.commenter?
+              %li
+                = link_to new_post_path, title: t('.new_post') do
+                  %i.glyphicon.glyphicon-plus
             %li#fat-menu.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#", title: (t'.account')}
-                %i.glyphicon.glyphicon-user
+                %i.glyphicon.glyphicon-cog
                 %b.caret
               %ul.dropdown-menu
+                - if current_user.admin?
+                  %li.dropdown-header
+                    Admin Settings
+                  %li= link_to "Manage Users", users_path
+                  %li= link_to "Manage Posts", posts_path
+                %li.dropdown-header
+                  User Settings
                 %li= link_to (t'.profile'), current_user
                 %li= link_to (t'.settings'), edit_user_path(current_user)
                 %li.divider
