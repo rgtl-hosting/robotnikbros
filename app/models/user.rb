@@ -37,7 +37,11 @@ class User < ActiveRecord::Base
   end
 
   def age
-    (Time.zone.now.to_date - birth_date.to_date).to_i / 365
+    if !birth_date.blank?
+      "#{(Time.zone.now.to_date - birth_date.to_date).to_i / 365} Years Old"
+    else
+      "Immortal"
+    end
   end
 
   private
