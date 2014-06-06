@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  before_filter :create
-  load_and_authorize_resource
 
   def create
     @post = Post.find(params[:post_id])

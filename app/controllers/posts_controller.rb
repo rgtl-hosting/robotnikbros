@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource skip_load_resource only: [:create]
 
   def index
     @posts = Post.all

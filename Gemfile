@@ -8,7 +8,6 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'haml', '4.0.5'
 gem 'bootsy', '2.0.9'
 gem 'devise', '3.2.4'
-gem 'cancan', '1.6.10'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
