@@ -10,8 +10,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to root_url
+    @post = Post.destroy(params[:id])
+    redirect_to root_url if !current_user.admin?
+    redirect_to posts_path if current_user.admin?
     flash[:success] = "Successfully Deleted Post: #{@post.title}."
   end
 
