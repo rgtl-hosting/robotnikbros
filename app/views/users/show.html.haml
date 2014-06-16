@@ -5,6 +5,14 @@
       %h3
         = gravatar_for @user
         = @user.name
+      - if @user == current_user || current_user.admin?
+        = link_to "Edit Profile", edit_user_path(@user)
       - if @user.show_age?
         = @user.age
-= render 'users_posts'
+- if @user.posts.first
+  = render 'users_posts'
+- else
+  -if @user == current_user
+    = link_to "Add Post", new_post_path
+  -else
+    User has no posts
