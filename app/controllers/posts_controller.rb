@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def safe_params
-    params.require(:post).permit(:title, :body, :user_id, :bootsy_image_gallery_id)
+    params.require(:post).permit(*policy(@post || Post).safe_attributes)
   end
 
 end

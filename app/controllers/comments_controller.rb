@@ -9,6 +9,6 @@ class CommentsController < ApplicationController
   private
 
   def safe_params
-    params.require(:comment).permit(:comment, :user_id)
+    params.require(:comment).permit(*policy(@comment || Comment).safe_attributes)
   end
 end

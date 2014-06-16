@@ -77,12 +77,13 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :birth_date, :show_age)
+      params.require(:user).permit(*policy(@user || User).safe_attributes)
     end
+
     def signed_in_user
       redirect_to signin_url, notice: "Please sign in." unless signed_in?
     end
+
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user) || current_user.admin?
