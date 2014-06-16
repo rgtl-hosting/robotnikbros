@@ -15,27 +15,30 @@ class ApplicationPolicy
   end
 
   def create?
-    false
+    manage?
   end
 
   def new?
-    create?
+    manage?
   end
 
   def update?
-    false
+    manage?
   end
 
   def edit?
-    update?
+    manage?
   end
 
   def destroy?
-    false
+    manage?
+  end
+
+  def manage?
+    user.present?
   end
 
   def scope
     Pundit.policy_scope!(user, record.class)
   end
 end
-
